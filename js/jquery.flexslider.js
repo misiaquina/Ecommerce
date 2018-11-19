@@ -3,6 +3,7 @@
  * Copyright 2012 WooThemes
  * Contributing Author: Tyler Smith
  */
+ // style
 ;
 (function ($) {
 

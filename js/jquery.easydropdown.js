@@ -7,6 +7,7 @@
 * Author: Patrick Kunka
 * Copyright 2013 Patrick Kunka, All Rights Reserved
 */
+// style
 
 
 (function($){
