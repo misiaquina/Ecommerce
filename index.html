@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Misia Store</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<h1>Misia Store</h1>
+	
+<body>
+
+	<!--navbar-->
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="produk.php">Produk</a></li>
+				<li><a href="">Login</a></li>
+				<li><a href="">Tentang Kami</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!--konten-->
+	<section class="konten">
+		<div class="container">
+			<h1>Our Product</h1>
+
+			<div class="row">
+
+				
+				<?php 
+				session_start();
+				$koneksi= new mysqli("localhost", "root", "", "ecomm");
+				$select="SELECT * FROM produk";
+				$hasil=$koneksi->query($select);
+				while ($row=$hasil->fetch_assoc()):
+					?>
+
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<img src="foto/<?php echo $row['Foto'];?>" alt="">
+						<div class="caption">
+							<h3><?php echo $row['Nama_Buku'];?></h3>
+							<h5>Rp. <?php echo number_format($row['Harga_Buku']);?></h5>
+							<a href="" class="btn btn-primary">Beli</a>
+						</div>
+					</div>
+				</div>
+
+			<?php endwhile ?>
+
+			</div>
+		</div>
+	</section>
+	
+</body>
+</html>
